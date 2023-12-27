@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ac42c3b1f7.js" crossorigin="anonymous"></script>
+    <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/4.10.0/gradio.js"></script>
+    <link rel="stylesheet" href="chatbot.css">
+    
+ </head>
+  <body>
+    <div class="">
+    
+      <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-section shadow">
+        <a class="navbar-brand " href="#homepage"><img class='image' src="https://img.freepik.com/free-vector/baby-birth-concept-illustration_114360-8159.jpg?w=740&t=st=1703515330~exp=1703515930~hmac=df9d0da2063d8086c25360f1c0689030a733d414c2b1904e1d0e1506724c221f"/></a>
+        <a class="navbar-brand" href="#homepage"><h1 class="head">PregaBot🩺</h1></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#homepage">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <!-- Button trigger modal -->
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModalLong">Preg-Plan</a>
+
+              <!-- Modal -->
+              <div class="container">
+              <div class="row">
+              <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content ">
+                    <div class="modal-headerd-flex flex-row p-3 todos-bg-container-1">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                      <h1 class=" font-weight-bold todos-heading modal-title">Preg <span class="plan-bot">Plan</span></h1>
+                      <p class="m-1 plan-des">Effortlessly manage your pregnancy tasks with PregPlan. Strike off completed items, delete with ease, and enjoy a stress-free journey into motherhood." can u give me something like this for name preg planner</p>
+                      
+                    </div>
+                    <div class="modal-body justify-content-center">
+                      <div class="todos-bg-container">
+                            <div class="col-12">
+                              <h1 class="create-task-heading">
+                                Create <span class="create-task-heading-subpart">Task</span>
+                              </h1>
+                              <input type="text" id="todoUserInput" class="todo-user-input" placeholder="What needs to be done?"/>
+                              <button class="button" id="addTodoButton">Add</button>
+                              <h1 class="todo-items-heading">
+                                My <span class="todo-items-heading-subpart">Tasks</span>
+                              </h1>
+                              <ul class="todo-items-container" id="todoItemsContainer"></ul>
+                              
+                            </div>
+                          </div>
+                        </div>  
+                    <hr/>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="saveTodoButton">Save</button>
+                    </div>
+                  </div>
+                </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#exercisesection">Tips and Precautions</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" target="_blank" href="https://web.umang.gov.in/landing/department/pmmvy.html">Pradhan Mantri Matru Vandana Yojana</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" target="_blank" href="https://colab.research.google.com/drive/10_qRziaHwdrGOpcfJ9k8is1_GT2VFC3x#scrollTo=d9LOTbYubojs">Documentation</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link " href="#Group">Group</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    <div id="homepage" class="container home-block justify-content-center p-0 ml-auto mr-auto">
+      
+      <div class="row">
+
+        <div class="col-12 col-lg-6 ">
+          <h1 class=" head-1 text-center  ">Hello,This is your PregaBot !</h1>
+          <p class="head-2">Meet your dedicated companion for a healthy pregnancy journey! Pregabot, our generative AI chatbot, is here to provide personalized guidance on diet, exercises, and safety measures. Tailored for the well-being of both body and mind, Pregabot ensures you navigate pregnancy with confidence and expert support. Experience the joy of a healthier pregnancy with your trusted Pregabot by your side.</p>
+          <div id="carouselExampleControls" class="shadow carousel slide ml-auto mr-auto  pregnancycontainer m-4" data-ride="carousel">
+            <div class="carousel-inner ">
+              <div class="carousel-item active ">
+                <img class="d-block w-100" src="https://img.freepik.com/free-vector/hand-drawn-mothers-day-illustration_23-2149367640.jpg?w=740&t=st=1703526389~exp=1703526989~hmac=d9649aa38cb7ae14e77bc0917d195fe78c2ffb2ff8fa35df3d794c5abbfacaf1" alt="First slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="https://img.freepik.com/free-vector/hand-drawn-fetus-illustration_23-2149205952.jpg?w=740&t=st=1703526428~exp=1703527028~hmac=667355fc284823471bca8967eb4c23f47ad0a9461e0d2f17e440cb705bdd0b79" alt="Second slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="https://img.freepik.com/free-vector/baby-birth-concept-illustration_114360-8179.jpg?w=740&t=st=1703526494~exp=1703527094~hmac=53656bcdee34e51f664b8bb471b66963b4343326ccd4090694e192e0f39fa9cd" alt="Third slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="https://img.freepik.com/free-vector/creative-fetal-development-collection_23-2149217734.jpg?w=740&t=st=1703526562~exp=1703527162~hmac=0d9bb8f300e957238a13bcd81bb5dc5fe2827ef05d3a8c80ced8bfb779b01366" alt="Third slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="https://img.freepik.com/free-vector/vector-pregnant-progression_1308-13658.jpg?w=826&t=st=1703526596~exp=1703527196~hmac=fa2b03018c8a9c846005da61b154701abe8c0b9f0a3e30400b77ecf450b3cabe" alt="Third slide">
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-6 text-center d-flex justify-content-center flex-column ">
+          <div class=" chatbotbox w-100 ml-5 mb-5">
+            <gradio-app  src="https://prabhaspetta-mainproject.hf.space"></gradio-app>
+          </div>
+          <P class="head-2  text-right ">Its is just Tool for advice.Please consult a proper doctor for better advice</P>
+        </div>
+      </div>
+    </div>
+
+    <div id="exercisesection" class="explore-menu-section pt-5 pb-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h1 class="menu-section-heading">Tips and Precautions</h1>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="shadow menu-item-card p-3 mb-3">
+              <div class="embed-responsive embed-responsive-16by9 menu-item-image w-100">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/bEi1i6V7dxA?rel=0" allowfullscreen></iframe>
+              </div>
+              
+              <h1 class="menu-card-title">The First Trimester - Precautions, Do's and Don'ts </h1>
+              <a href="https://youtu.be/bEi1i6V7dxA?si=vDSF2NbG-kfLMjpE" target="_blank" class="menu-item-link">
+                View All
+                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right-short" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="shadow menu-item-card p-3 mb-3">
+              <div class="embed-responsive embed-responsive-16by9 menu-item-image w-100">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/9o_Kxcss1u8?rel=0" allowfullscreen></iframe>
+              </div>
+              
+              <h1 class="menu-card-title">So you're pregnant,now what? Advice for a safe and healthy pregnancy</h1>
+              <a href="https://youtu.be/9o_Kxcss1u8?si=XFm9t5b2vjLiQ2sO" target="_blank" class="menu-item-link">
+                View All
+                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right-short" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="shadow menu-item-card p-3 mb-3">
+              <div class="embed-responsive embed-responsive-16by9 menu-item-image w-100">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/N_PglaMSA2k?rel=0" allowfullscreen></iframe>
+              </div>
+              
+              <h1 class="menu-card-title">BEST PREGNANCY DIET PLAN FOR A HEALTHY BABY I 1ST trimester I</h1>
+              <a href="https://youtu.be/N_PglaMSA2k?si=8VDFq_eBpA3D8y3X" target="_blank" class="menu-item-link">
+                View All
+                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right-short" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="shadow menu-item-card p-3 mb-3">
+              <div class="embed-responsive embed-responsive-16by9 menu-item-image w-100">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/S7qO_9-NJmA?rel=0" allowfullscreen></iframe>
+              </div>
+              
+              <h1 class="menu-card-title">8 Essential Pregnancy Care Tips</h1>
+              <a href="https://youtu.be/S7qO_9-NJmA?si=c7RTLlqMllzeMe6e" target="_blank" class="menu-item-link">
+                View All
+                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right-short" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="shadow menu-item-card p-3 mb-3">
+              <div class="embed-responsive embed-responsive-16by9 menu-item-image w-100">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/j2zOHmMlzug?rel=0" allowfullscreen></iframe>
+              </div>
+              
+              <h1 class="menu-card-title">What to eat during pregnancy in telugu| Dr.k.Shilpi Reddy</h1>
+              <a href="https://youtu.be/j2zOHmMlzug?si=0jhNntWDU_NBT7SQ" target="_blank" class="menu-item-link">
+                View All
+                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right-short" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="shadow menu-item-card p-3 mb-3">
+              <div class="embed-responsive embed-responsive-16by9 menu-item-image w-100">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/_dVuHFdUN0c?rel=0" allowfullscreen></iframe>
+              </div>
+              
+              <h1 class="menu-card-title">Pregnancy Guide: Asanas, Nutrition, Skincare, Mood Swings & Baby Care</h1>
+              <a href="https://youtu.be/_dVuHFdUN0c?si=XrISE2rx-cXpASSQ" target="_blank" class="menu-item-link">
+                View All
+                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right-short" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="shadow menu-item-card p-3 mb-3">
+              <div class="embed-responsive embed-responsive-16by9 menu-item-image w-100">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/aCx0Pgb8X0Q?rel=0" allowfullscreen></iframe>
+              </div>
+              
+              <h1 class="menu-card-title">Exercises In Pregnancy   | Dr Anjali Kumar | Maitri</h1>
+              <a href="https://youtu.be/aCx0Pgb8X0Q?feature=shared" target="_blank" class="menu-item-link">
+                View All
+                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right-short" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="shadow menu-item-card p-3 mb-3">
+              <div class="embed-responsive embed-responsive-16by9 menu-item-image w-100">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4X0jKnpc7lQ?rel=0" allowfullscreen></iframe>
+              </div>
+              
+              <h1 class="menu-card-title">Risks Of A Diabetic Pregnancy | High Blood Sugar Effects On Baby</h1>
+              <a href="https://youtu.be/4X0jKnpc7lQ?feature=shared" target="_blank" class="menu-item-link">
+                View All
+                <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right-short" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <div id="Group" class="footer-section justify-content-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+          
+            
+            <div class="d-flex flex-row justify-content-center">
+              <div class="mr-auto">
+                <h1 class="footer-section-mail-id">Batch(B11):</h1>
+                <p class="footer-section-address text-left">P.Sri Sai Prabhas<br/>
+                Regd.20761A04A6<br/>
+                N.mounica<br/>
+                Regd.20761A0496<br/>
+                G.Maneesh<br/>
+                Regd.20761A0486
+                </p>
+              </div>
+              <div class="m-auto">
+              <img
+              src="https://img.freepik.com/free-vector/baby-birth-concept-illustration_114360-8159.jpg?w=740&t=st=1703515330~exp=1703515930~hmac=df9d0da2063d8086c25360f1c0689030a733d414c2b1904e1d0e1506724c221f"
+              class="food-munch-logo m-auto"
+            />
+            <h1 class="head text-center m-auto mb-5">PregaBot🩺</h1>
+            </div>
+            
+              <div class="ml-auto ">
+                <h1 class="footer-section-mail-id">Guide:</h1>
+                <P class="footer-section-address">Mrs. K. Pavani<br/>Sr. Asst. Professor<br/></P>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+   
+    <script src="chatbot.js"></script>
+    
+  </body>
+</html>
